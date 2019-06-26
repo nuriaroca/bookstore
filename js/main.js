@@ -13,6 +13,7 @@ fetch("https://api.myjson.com/bins/1h3vb3")
 
         megafuncion(data);
 
+
     }).catch(function (error) {
         console.log("Request failed: " + error.message);
     });;
@@ -50,6 +51,7 @@ function megafuncion(data) {
         var description = document.createElement("p");
         var button = document.createElement("button");
         button.setAttribute("type", "button");
+        button.setAttribute("class", "btn btn-info");
 
         var divInfo = document.createElement("div");
         divInfo.setAttribute("class", "info");
@@ -59,11 +61,30 @@ function megafuncion(data) {
         button.innerHTML = "Más info";
 
         flipCardFront.append(img); //portada plana
-        divInfo.append(title, description, button);
-        flipCardBack.append(link, divInfo); //link+img 3D
+        divInfo.append(title, description);
+        flipCardBack.append(divInfo, link); //link+img 3D
+        link.append(button);
         flipCardInner.append(flipCardFront, flipCardBack);
         flipCard.append(flipCardInner);
+
         divBook.append(flipCard);
         container.append(divBook);
+    }
+}
+
+function myFunction() {
+    var searchValue, allBooks;
+
+    allBooks = document.getElementsByClassName("divBook");
+    searchValue = document.getElementById("myInput").value.toUpperCase();
+
+    for (i = 0; i < allBooks.length; i++) {
+        var bookText = allBooks[i].innerText.toUpperCase(); //tot el text de cada llibre en mayuscules
+
+        if (bookText.includes(searchValue)) {
+            allBooks[i].style.display = ""; //pot set he de mostrar tot el box, no només h2
+        } else {
+            allBooks[i].style.display = "none"; //amagar tot el box, no només h2????
+        }
     }
 }

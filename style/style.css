@@ -1,3 +1,36 @@
+img {
+    width: 500px;
+}
+
+/* HEADER */
+
+nav {
+    background-color: #F5E4D4;
+    border-bottom: 2px dotted #4FB6D2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+.searchbutton {
+    text-align: center;
+    margin-right: 45px;
+}
+
+::placeholder {
+    color: #4FB6D2;
+}
+
+/* BODY */
+
+body {
+    background-color: #F5E4D4;
+}
+
 #container {
     display: flex;
     justify-content: space-between;
@@ -6,6 +39,7 @@
     margin-left: 200px;
     margin-top: 50px;
     margin-bottom: 50px;
+    background-color: #F5E4D4;
 }
 
 .smallImg {
@@ -17,7 +51,7 @@
     width: 300px;
     height: 450px;
     background-color: transparent;
-    border: 1px solid #f1f1f1;
+    /* border: 1px solid #f1f1f1; */
     perspective: 1000px;
 }
 
@@ -43,15 +77,24 @@
 }
 
 .flip-card-back {
-    background-color: #2980b9;
+    background-color: #4FB6D2;
     color: white;
     transform: rotateY(180deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .info {
-    margin: 10px;
+    margin: 25px;
     font-size: 15px;
-    vertical-align: 50px;
+    text-align: justify;
 }
 
 .divBook {
