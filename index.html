@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/images/Icons8-Windows-8-Clothing-Glasses.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -25,8 +27,22 @@
         </form>
     </nav>
 
+    <div id="app">
 
-    <div id="container">
+
+        <div id="container">
+
+            <div v-for="book in books" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img v-bind:src="book.portada" class="smallImg">
+                    </div>
+
+                    <div class="flip-card-back"></div>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
