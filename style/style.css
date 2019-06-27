@@ -42,6 +42,10 @@ body {
     background-color: #F5E4D4;
 }
 
+.divBook {
+    margin-bottom: 30px;
+}
+
 .smallImg {
     width: 300px;
     height: 450px;
@@ -86,6 +90,7 @@ body {
     justify-content: center;
 }
 
+
 h2 {
     text-align: center;
     margin-bottom: 30px;
@@ -97,6 +102,3 @@ h2 {
     text-align: justify;
 }
 
-.divBook {
-    margin-bottom: 30px;
-}

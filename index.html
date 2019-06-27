@@ -32,13 +32,24 @@
 
         <div id="container">
 
-            <div v-for="book in books" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img v-bind:src="book.portada" class="smallImg">
-                    </div>
+            <div class="divBook">
+                <div v-for="book in books" class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img v-bind:src="book.portada" class="smallImg">
+                        </div>
 
-                    <div class="flip-card-back"></div>
+                        <div class="flip-card-back">
+                            <div class="info">
+
+
+                            </div>
+                            <a href="#" data-fancybox="galery">
+                                <button type="button" class="btn btn-info">Más info</button>
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
