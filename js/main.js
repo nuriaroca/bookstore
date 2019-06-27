@@ -4,6 +4,7 @@ var myVue = new Vue({
         books: []
     },
     created() {
+        console.log("done with vue.js...")
         this.megafuncion()
     },
     methods: {
