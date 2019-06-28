@@ -1,14 +1,14 @@
-Vue.component('book', {
-    props: ['book'],
-    template: ' <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img v-bind:src="book.portada" class="smallImg"></div><div class="flip-card-back"><h2>{{book.titulo}}</h2><p class="info">{{book.descripcion}}</p><a v-bind:href="book.detalle" data-fancybox="galery"><button type="button" class="btn btn-info">Más info</button></a></div></div></div>'
-
-})
+Vue.component('book', { //book es el nombre de mi "div"
+    props: ['item'], //hay que igualar esta propiedad a la anterior (book) con el v-bind:item="book" para que la reconozca
+    template: ' <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img v-bind:src="item.portada" class="smallImg"></div><div class="flip-card-back"><h2>{{item.titulo}}</h2><p class="info">{{item.descripcion}}</p><a v-bind:href="item.detalle" data-fancybox="galery"><button type="button" class="btn btn-info">Más info</button></a></div></div></div>'
+}) // el nombre de prop actua en template como un parametro en funciones
 
 var myVue = new Vue({
     el: "#app",
-    data: {
-        search: '',
-        books: []
+    data: { //cajón donde guardar variables
+        search: '', //definir search que esta en html (v-model="search")
+        books: [],
+        lang: [] //enlazar cb con data
     },
     created() {
         console.log("done with vue.js...")
@@ -24,7 +24,6 @@ var myVue = new Vue({
                     throw new Error(response.statusText);
                 }).then(function (json) {
                     myVue.books = json.books;
-
                 }).catch(function (error) {
                     console.log("Request failed: " + error.message);
                 });;
@@ -32,27 +31,12 @@ var myVue = new Vue({
     },
     computed: {
         filteredBooks() {
-            return this.books.filter(book => {
-                return book.titulo.toUpperCase().includes(this.search.toUpperCase())
+            return this.langFilter.filter(book => {
+                return book.titulo.toUpperCase().includes(this.search.toUpperCase()), book.descripcion.toUpperCase().includes(this.search.toUpperCase())
             })
+        },
+        langFilter() {
+            return this.books.filter(book => this.lang.includes(book.idioma) || this.lang.length === 0);
         }
     }
 })
-
-// SEARCH
-// function myFunction() {
-//     var searchValue, allBooks;
-
-//     allBooks = document.getElementsByClassName("flip-card");
-//     searchValue = document.getElementById("myInput").value.toUpperCase();
-
-//     for (i = 0; i < allBooks.length; i++) {
-//         var bookText = allBooks[i].innerText.toUpperCase();
-
-//         if (bookText.includes(searchValue)) {
-//             allBooks[i].style.display = "";
-//         } else {
-//             allBooks[i].style.display = "none";
-//         }
-//     }
-// }
