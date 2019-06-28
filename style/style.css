@@ -29,6 +29,7 @@ nav {
 
 body {
     background-color: #F5E4D4;
+    background-image:;
 }
 
 #container {
@@ -42,10 +43,6 @@ body {
     background-color: #F5E4D4;
 }
 
-.divBook {
-    margin-bottom: 30px;
-}
-
 .smallImg {
     width: 300px;
     height: 450px;
@@ -55,7 +52,7 @@ body {
     width: 300px;
     height: 450px;
     background-color: transparent;
-    /* border: 1px solid #f1f1f1; */
+    margin-bottom: 30px;
     perspective: 1000px;
 }
 
@@ -90,10 +87,10 @@ body {
     justify-content: center;
 }
 
-
 h2 {
     text-align: center;
     margin-bottom: 30px;
+    margin: 25px;
 }
 
 .info {
@@ -101,4 +98,3 @@ h2 {
     font-size: 15px;
     text-align: justify;
 }
-
